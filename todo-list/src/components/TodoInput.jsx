@@ -14,8 +14,6 @@ const TodoInput = (props) => {
       <input
         type="text"
         className="input-box-todo"
-        name=""
-        id=""
         value={inputText}
         placeholder="Enter your tasks.."
         onChange={(e) => setInputText(e.target.value)}
