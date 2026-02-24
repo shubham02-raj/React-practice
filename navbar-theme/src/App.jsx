@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import Navbar from './components/navbar/Navbar'
+import React, { useEffect, useState } from "react";
+import Navbar from "./components/navbar/Navbar";
 
 const App = () => {
+  const current_theme = localStorage.getItem("current_theme");
 
-  const current_theme = localStorage.getItem('current_theme');
+  const [theme, setTheme] = useState(current_theme ? current_theme : "light");
 
-  const [theme, setTheme] = useState(current_theme? current_theme : 'light')
-
-  useEffect(()=> {
-    localStorage.setItem('current_theme', theme)
-  },[theme])
+  //useeffect for loading the theme
+  useEffect(() => {
+    localStorage.setItem("current_theme", theme);
+  }, [theme]);
   return (
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
